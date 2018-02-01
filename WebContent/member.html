@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<title>梦工程工作室-gzgchzc-让爱无处不在</title>
+		<meta name="author" content="design by www.gzvtc.cc" />
+		<meta name="viewport" content="width=1200, user-scalable=no, target-densitydpi=device-dpi" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+
+		<link href="statics/css/common.css" rel="stylesheet" type="text/css" />
+		<link href="statics/css/index.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="statics/js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="statics/js/jquery.flash.js"></script>
+		<link rel="stylesheet" href="statics/bootstrap.min.css">
+		<link rel="stylesheet" href="statics/style.css">
+		<link rel="stylesheet" href="statics/common.css">
+		<script src="statics/layer.js"></script>
+		<script src="statics/common.js"></script>
+		<script src="statics/bootstrap.min.js"></script>
+		<!--[if lt IE 7]>
+		<script type="text/javascript" src="statics/js/pngfix.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="C-head">
+			<div class="w1200 clearfix">
+				<a class="logo" href=""></a>
+				<div class="nav">
+					<ul>
+						<li>
+							<i></i>
+							<a href="index.html">
+
+								<span class="s-all">首页<span class="s-en">Home</span></span>
+							</a>
+						</li>
+
+						<li>
+							<i></i>
+							<a href='wedding.html'>
+
+								<span class='s-all'>客片欣赏<span class='s-en'>Wedding</span></span>
+							</a>
+						</li>
+
+						<li>
+							<i></i>
+							<a href='photoer.html'>
+
+								<span class='s-all'>选摄影师<span class='s-en'>Photographer</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='spots.html'>
+
+								<span class='s-all'>拍摄景点<span class='s-en'>Spots</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='information.html'>
+
+								<span class='s-all'>热门活动<span class='s-en'>Activities</span></span>
+							</a>
+						</li>
+
+						<li><i></i>
+							<a href="brand.html"><span class="s-all">品牌<span class="s-en">Brand</span></span>
+							</a>
+						</li>
+						<li class='tip'><i></i>
+							<a href="member.html"><span class="s-all">会员<span class="s-en">Member</span></span>
+							</a>
+							<i class="last"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<style>
+			#bodyleft{float: left;width: 200px;background: #8fd0ca;margin-right: 50px;height: 500px;}
+			#bodyleft p{padding: 15px 0 15px 20px;color: #fff}
+			.active{background: #33a49a;}
+			#bodyleft p:hover{cursor: pointer;background: #33a49a;}
+			#bodyleft button{margin: 250px 0 20px 20px;background: #fff;color: #8fd0ca;outline: none;border: 0;padding:8px 30px;}
+			#bodyleft button:hover{background: #33a49a; }
+			tr > td:last-child{cursor: pointer;}
+			#bodyright1,#bodyright2{float: left;width: 950px;font-size: 13px;color: rgb(75,75,75);overflow-wrap:break-word;word-break: break-all;line-height: 25px;}
+			#bodyright2{display: none;}
+		</style>
+		<div class="Column-stage" style="height: auto;border: 0;margin: 50px 0;">
+			<div class="w1200 clearfix" style="overflow: hidden">
+				<div  id="bodyleft">
+					<p id="username">尊敬的：</p>
+					<p class="active" onclick="showtab(1)" id="tab1">订单管理</p>
+					<p onclick="showtab(2)" id="tab2">密码修改</p>
+					<button onclick="logout()">退出登录</button>
+				</div>
+				<div id="bodyright1">
+					<table class="table table-hover">
+
+						<thead>
+						<tr>
+							<th>意向拍摄日期</th>
+							<th>意向摄影师</th>
+							<th>联系客服</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+						</thead>
+						<tbody id="result">
+
+						</tbody>
+					</table>
+					<div class="modal fade" id="evaluate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="">
+						<div class="modal-dialog modal_wrap">
+							<div class="modal-content">
+
+								<div class="modal-body login_con">
+
+									<div class="finput  mar-t20">
+										<input type="text" id="pingjia" class="form-control" placeholder="评价内容">
+									</div>
+
+									<input type="button" id="form_submit" value="评价" name="yt0" class="btn btn-yello01">
+								</div>
+							</div><!-- /.modal-content -->
+						</div>
+					</div>
+
+				</div>
+				<div id="bodyright2">
+						<div class="modal-body login_con">
+
+							<div class="finput">
+								<input id="forget_phonenum" class="form-control" type="text" maxlength="11" name="forget[phonenum]" placeholder="请输入手机号">
+							</div>
+
+							<div class="finput">
+								<input type="password" maxlength="100" id="forget_passwd" name="forget[passwd]" class="form-control" autocomplete="off" placeholder="请输入新的密码">
+							</div>
+							<div class="finput">
+								<input type="password" id="forget_repasswd" name="forget[repasswd]" class="form-control" placeholder="请再次输入密码">
+							</div>
+							<button class="btn btn-yello01" onclick="update()" type="button">修改</button>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-wrap ">
+			<div class="copyright">
+				<a href="http://www.miibeian.gov.cn" style="color: #fff; text-decoration: underline;">粤ICP备10000001号</a> &nbsp;<a href="http://blog.gzvtc.cc" style="color: #fff; text-decoration: underline;">梦工程工作室出品 -gzgchzc</a></a><br /> @ 2017 GZVTC.CC &nbsp;
+			</div>
+		</div>
+		<script>
+			var username;
+			$.get("/Photo/user/getUserInfo",{},function(data){
+				if(data.status==0){
+					username = data.data.name;
+					$('#username').append(username);
+				}
+			})
+			function showtab(i){
+				if(i==1){
+					$('#tab1').addClass('atctiv');
+					$('#tab2').removeClass('active');
+					$('#bodyright2').hide();
+					$('#bodyright1').show();
+				}else{
+					$('#tab2').addClass('atctiv');
+					$('#tab1').removeClass('active');
+					$('#bodyright1').hide();
+					$('#bodyright2').show();
+				}
+			}
+			function logout(){
+				$.get('/Photo/user/logout',{},function(data){
+					if(data.status==0){
+						var baseUrl = location.protocol + "//" + location.host;
+						window.location.href = baseUrl + "/Photo/index.html";
+					}
+				})
+			}
+			function del(id){
+				$.get('/Photo/deleteSchedule',{'id':id},function(data){
+					if(data.status==0){
+						init();
+					}else{
+						alert('删除失败');
+					}
+				})
+			}
+			init();
+			function init(){
+				$.get('/Photo/getSchedule',{},function(data){
+					if(data.status==0){
+						$('#result').html('');
+						$.each(data.data,function(i,item){
+							var result = '<tr><td>'+item.start+' -- '+item.end+'</td><td>'+item.name+'</td><td> 023-65478586</td><td>' ;
+							if(item.status==1){
+								result +='已接受';
+								result +='</td><td onclick="pingjia('+item.photographerId+')"  data-toggle="modal" data-target="#evaluate">评价</td></tr>';
+							}else if(item.status==3){
+								result +='流失';
+								result +='</td><td onclick="del('+item.id+')"> 删除</td></tr>';
+							}else{
+								result+='待处理';
+								result +='</td><td onclick="del('+item.id+')"> 删除</td></tr>';
+							}
+
+
+							$('#result').append(result);
+						})
+					}
+				})
+			}
+			function update(){
+				var phonenum = $('#forget_phonenum').val();
+				var passwd = $('#forget_passwd').val();
+				var repasswd = $('#forget_repasswd').val();
+				var name = username;
+
+				if(phonenum == ''){
+					alert('手机号码不能为空');
+					return false;
+				}
+
+				if(passwd == ''){
+					alert('密码不能为空');
+					return false;
+				}
+				if(passwd.length<6 || passwd.length>12){
+					alert('密码格式不正确，密码必须为6-12位！');
+					return false;
+				}
+				if(passwd != repasswd){
+					alert('两次密码输入不一致');
+					return false;
+				}
+
+				$.ajax({
+					url : '/Photo/user/updatePassword',
+					type :'POST',
+					data : {'tel': phonenum, 'name': name, 'password': repasswd},
+					dataType : 'JSON',
+					beforeSend: function(){
+						layer.msg("数据提交中，请稍等...");
+					},
+					success : function(data){
+						layer.closeAll();
+						if(data.status == 0){
+							alert('修改成功');
+						}else{
+							alert("找回密码失败");
+						}
+					},error : function(){
+						alert("网络错误！");
+					}
+				})
+			}
+
+			var photographerid;
+
+			function pingjia(id){
+				photographerid =id;
+			}
+			$('#form_submit').click(function(){
+				$.post('/Photo/addComment',{comment:$('#pingjia').val(),photographerid:photographerid},function(data){
+					if(data.status==0){
+						alert('评价成功');
+						$("#evaluate").modal( 'hide' );
+					}
+				})
+			})
+		</script>
+
+	</body>
+
+</html>

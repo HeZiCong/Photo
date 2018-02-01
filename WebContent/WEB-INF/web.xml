@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>photo</display-name>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>www.gzvtc.cc</param-value>
+		<description>梦工程工作室</description>
+	</context-param>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:cc/gzvtc/config/log4j.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>60000</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:cc/gzvtc/config/spring-mybatis.xml</param-value>
+	</context-param>
+	<listener>
+		<description>spring监听器</description>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>SpringMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<description>spring MVC  配置文件</description>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:cc/gzvtc/config/spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SpringMVC</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/static/404.html</location>
+	</error-page>
+<filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>cc.gzvtc.common.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/member.html</url-pattern>
+    </filter-mapping>
+     <filter>
+        <filter-name>AdminLoginFilter</filter-name>
+        <filter-class>cc.gzvtc.common.filter.AdminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminLoginFilter</filter-name>
+        <url-pattern>/manage/page/*</url-pattern>
+        <url-pattern>/manage/home.html</url-pattern>
+        <url-pattern>/manage/index.html</url-pattern>
+    </filter-mapping>
+</web-app>

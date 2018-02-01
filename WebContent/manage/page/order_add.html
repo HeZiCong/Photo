@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>作品添加</title>
+<meta name="description"
+	content="Dynamic tables and grids using jqGrid plugin" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<!-- bootstrap & fontawesome -->
+<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+<link rel="stylesheet" href="../assets/css/font-awesome.css" />
+<!-- page specific plugin styles -->
+<link rel="stylesheet" href="../assets/css/jquery-ui.css" />
+<link rel="stylesheet" href="../assets/css/jquery-ui.custom.css" />
+<link rel="stylesheet" href="../assets/css/chosen.css" />
+<link rel="stylesheet" href="../assets/css/daterangepicker.css " />
+<!-- text fonts -->
+<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+<!-- ace styles -->
+<link rel="stylesheet" href="../assets/css/ace.css"
+	class="ace-main-stylesheet" id="main-ace-style" />
+<!--[if lte IE 9]>
+			<link rel="stylesheet" href="../../../css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="../../../css/ace-ie.css" />
+		<![endif]-->
+<link rel="stylesheet" href="../assets/css/page_dialog.css" />
+<style type="text/css">
+.tags {
+	background-color: #fff;
+	border: 1px solid #d5d5d5;
+	color: #777777;
+	display: inline-block;
+	padding: 4px 6px;
+	vertical-align: middle;
+	width: 100%;
+}
+</style>
+</head>
+
+<body class="no-skin">
+	<div class="main-container" id="main-container">
+		<div class="main-content">
+			<div class="page-content">
+				<form class="form-horizontal" id="addForm">
+					<div class="col-xs-10">
+						
+						<div class="form-group">
+							<label for="typeId" class="col-xs-4 control-label text-right"><span
+								class="text-danger">★</span>摄影师：</label>
+							<div class="col-xs-8">
+								<div class="clearfix">
+									<select class="chosen-select  form-control" id="photographerId"
+										name="photographerId" data-placeholder="选择摄影师">
+										<option value=""></option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="typeId" class="col-xs-4 control-label text-right"><span
+								class="text-danger">★</span>时间段：</label>
+							<div class="col-xs-8">
+								<div class="col-md-6 col-sm-8 col-xs-12">
+														<div class="input-group">
+															<input class="form-control" data-date-format="yyyy-mm-dd" type="text" name="createTimeRange" id="createTimeRange" placeholder="预约时间" />
+																<span class="input-group-addon">
+																	<i class="fa fa-calendar bigger-110"></i>
+																</span>
+														</div>
+												</div>
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="inputPassword" class="col-xs-4 control-label text-right"><span class="text-danger">★</span>状态：</label>
+						<div class="col-xs-8">
+							<div class="radio">
+								<label>
+									<input id="status" name="status" value="2" type="radio" checked class="form-control ace" />
+									<span class="lbl">无档期</span>
+								</label>
+								<label>
+									<input id="status" name="status" value="1" type="radio" class="form-control ace" />
+									<span class="lbl">有预约 </span>
+								</label>
+							</div>
+						</div>
+					</div>
+						
+						<div class="form-group text-center">
+							<label class="col-xs-3 control-label text-right"></label> <a
+								id="addButton" role="button" class="btn btn-primary btn-sm"
+								class="form-control"> <span id="save"> <i
+									class="ace-icon fa fa-floppy-o"></i> 保存
+							</span> <span id="saving" hidden="true"> <i
+									class="ace-icon fa fa-spinner fa-spin orange bigger-180"></i>正在保存...
+							</span>
+							</a> <a id="cancleButton" role="button" class="btn btn-danger btn-sm"
+								class="form-control"> <i class="ace-icon fa  fa-times"></i>取消
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- /.main-content -->
+
+	<script type="text/javascript">
+		if ('ontouchstart' in document.documentElement)
+			document
+					.write("<script src='../assets/js/jquery.mobile.custom.js'>"
+							+ "<"+"/script>");
+	</script>
+	<script type="text/javascript" src="../assets/js/jquery1x.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../assets/js/ace-elements.js"></script>
+	<script type="text/javascript" src="../assets/js/ace.js"></script>
+	<script src="../assets/js/bootbox.js"></script>
+	<script src="../js/require.js" data-main="../js/order_add"></script>
+</body>
+</html>

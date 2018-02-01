@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<title>梦工程工作室-gzgchzc-让爱无处不在</title>
+		<meta name="author" content="design by www.gzvtc.cc" />
+		<meta name="viewport" content="width=1200, user-scalable=no, target-densitydpi=device-dpi" />
+		<meta name="keywords" content="梦工程工作室-gzgchzc工作室婚纱摄影,重庆婚纱摄影,摄影师,梦工程工作室-gzgchzc工作室婚纱摄影自选平台" />
+		<meta name="description" content="梦工程工作室-gzgchzc工作室婚纱摄影自选平台|自选摄影师提供商业广告,事件纪实,儿童摄影,婚礼跟拍,婚纱摄影,艺术写真,全家福等专业摄影师为您服务，您可以根据自己的摄影风格选择适合自己的专业摄影师拍摄。" />
+
+		<link rel="stylesheet" href="statics/bootstrap.min.css">
+		<link rel="stylesheet" href="statics/style.css">
+		<link rel="stylesheet" href="statics/common.css">
+		<link rel="stylesheet" href="statics/share.min.css">
+		<link href="statics/css/common.css" rel="stylesheet" type="text/css" />
+		<link href="statics/css/index.css" rel="stylesheet" type="text/css" />
+		<script src="statics/jquery.min.js"></script>
+		<script src="statics/jquery.share.min.js"></script>
+		<script src="statics/bootstrap.min.js"></script>
+		<script src="statics/cookie.min.js"></script>
+		<script src="statics/layer.js"></script>
+		<script src="statics/laydate.js"></script>
+
+		<script src="statics/page.js"></script>
+	</head>
+
+	<body>
+		<div class="C-head">
+			<div class="w1200 clearfix">
+				<a class="logo" href=""></a>
+				<div class="nav">
+					<ul>
+						<li>
+							<i></i>
+							<a href="index.html">
+
+								<span class="s-all">首页<span class="s-en">Home</span></span>
+							</a>
+						</li>
+
+						<li>
+							<i></i>
+							<a href='wedding.html'>
+
+								<span class='s-all'>客片欣赏<span class='s-en'>Wedding</span></span>
+							</a>
+						</li>
+
+						<li class='tip'>
+							<i></i>
+							<a href='photoer.html'>
+
+								<span class='s-all'>选摄影师<span class='s-en'>Photographer</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='spots.html'>
+
+								<span class='s-all'>拍摄景点<span class='s-en'>Spots</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='information.html'>
+
+								<span class='s-all'>热门活动<span class='s-en'>Activities</span></span>
+							</a>
+						</li>
+
+						<li><i></i>
+							<a href="brand.html"><span class="s-all">品牌<span class="s-en">Brand</span></span>
+							</a>
+						</li>
+						<li><i></i>
+							<a href="member.html"><span class="s-all">会员<span class="s-en">Member</span></span>
+							</a>
+							<i class="last"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="w1200">
+			<div class="clearfix wzwrap">
+				<div class="wz pull-left">
+					<h4>按标签</h4>
+					<span>label</span>
+				</div>
+				<div class="pull-left wzcon" id="label">
+				</div>
+			</div>
+			<div class="clearfix wzwrap">
+				<div class="wz pull-left">
+					<h4>按级别</h4>
+					<span>level</span>
+				</div>
+				<div class="pull-left wzcon" id="level">
+				</div>
+			</div>
+			<div class="clearfix wzwrap">
+				<div class="wz pull-left">
+					<h4>常驻馆</h4>
+					<span>Resident</span>
+				</div>
+				<div class="pull-left wzcon" id="spots">
+				</div>
+			</div>
+			<div class="clearfix wzwrap">
+				<div class="wz pull-left">
+					<h4>按档期</h4>
+					<span>Schedule</span>
+				</div>
+				<div class="pull-left wzcon">
+					<div class="clearfix">
+						<div class="laydate-icon datime pull-left" style="margin-left:20px;height: 34px;" id="start"></div>
+						<span class="pull-left tline">—</span>
+						<div class="laydate-icon datime pull-left" id="end" style="height: 34px;"></div>
+						<div class="pull-left">
+							<span class="descon">
+                        请选择您希望拍摄的时间                    </span>
+							<button class="qrbutton" id="search_button" style="width: 200px;">根据以上条件筛选</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="wrap mar-t20">
+			<div class="row w1200" id="photoerList">
+
+			</div>
+			<div class="pages_wrap text-center mt20" id="photoerPage"></div>
+		</div>
+
+		<script src="statics/index.js"></script>
+		<script>
+			var start = {
+				elem: '#start',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(+1), //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: true,
+				istoday: false,
+				choose: function(datas) {
+					end.min = datas; //开始日选好后，重置结束日的最小日期
+					end.start = datas; //将结束日的初始值设定为开始日
+					$('#start').data('bind', datas);
+					console.log(datas)
+						//action.remove('#start');
+
+				}
+			};
+			var end = {
+				elem: '#end',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(+1),
+				max: '2099-06-16',
+				istime: true,
+				istoday: false,
+				choose: function(datas) {
+					//start.max = datas; //结束日选好后，重置开始日的最大日期
+					$('#end').data('bind', datas);
+					//action.remove('#end');
+				}
+			};
+			laydate(start);
+			laydate(end);
+			
+		</script>
+
+		<div class="footer-wrap mar-t20">
+			<div class="copyright">
+				<a href="http://www.miibeian.gov.cn" style="color: #fff; text-decoration: underline;">粤ICP备10000001号</a> &nbsp;<a href="http://blog.gzvtc.cc" style="color: #fff; text-decoration: underline;">梦工程工作室出品 -gzgchzc</a></a><br /> @ 2017 GZVTC.CC &nbsp;
+			</div>
+		</div>
+
+</html>

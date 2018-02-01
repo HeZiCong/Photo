@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<title>梦工程工作室-gzgchzc-让爱无处不在</title>
+		<meta name="author" content="design by www.gzvtc.cc" />
+		<meta name="viewport" content="width=1200, user-scalable=no, target-densitydpi=device-dpi" />
+		<meta name="keywords" content="梦工程工作室-gzgchzc工作室婚纱摄影,重庆婚纱摄影,摄影师,梦工程工作室-gzgchzc工作室婚纱摄影自选平台" />
+		<meta name="description" content="梦工程工作室-gzgchzc工作室婚纱摄影自选平台|自选摄影师提供商业广告,事件纪实,儿童摄影,婚礼跟拍,婚纱摄影,艺术写真,全家福等专业摄影师为您服务，您可以根据自己的摄影风格选择适合自己的专业摄影师拍摄。" />
+
+		<link rel="stylesheet" href="statics/bootstrap.min.css">
+		<link rel="stylesheet" href="statics/style.css">
+		<link rel="stylesheet" href="statics/common.css">
+		<link rel="stylesheet" href="statics/share.min.css">
+		<link href="statics/css/common.css" rel="stylesheet" type="text/css" />
+		<link href="statics/css/index.css" rel="stylesheet" type="text/css" />
+		<script src="statics/jquery.min.js"></script>
+		<script src="statics/jquery.share.min.js"></script>
+		<script src="statics/bootstrap.min.js"></script>
+		<script src="statics/cookie.min.js"></script>
+		<script src="statics/layer.js"></script>
+		<script src="statics/laydate.js"></script>
+		<script src="statics/jquery.bxslider.min.js"></script>
+
+		<script src="statics/page.js"></script>
+		<script src="statics/masonry.js"></script>
+		<script src="statics/imagesLoaded.js"></script>
+
+		<script src="statics/jquery.SuperSlide.js"></script>
+		<script src="statics/common.js"></script>
+		<script src="statics/banner.js"></script>
+		<script src="statics/jquery.wookmark.js"></script>
+		<!--<link href="statics/index3.css" />-->
+	</head>
+
+	<body>
+		<div class="C-head">
+			<div class="w1200 clearfix">
+				<a class="logo" href=""></a>
+				<div class="nav">
+					<ul>
+						<li>
+							<i></i>
+							<a href="index.html">
+
+								<span class="s-all">首页<span class="s-en">Home</span></span>
+							</a>
+						</li>
+
+						<li>
+							<i></i>
+							<a href='wedding.html'>
+
+								<span class='s-all'>客片欣赏<span class='s-en'>Wedding</span></span>
+							</a>
+						</li>
+
+						<li class='tip'>
+							<i></i>
+							<a href='photoer.html'>
+
+								<span class='s-all'>选摄影师<span class='s-en'>Photographer</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='spots.html'>
+
+								<span class='s-all'>拍摄景点<span class='s-en'>Spots</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='information.html'>
+
+								<span class='s-all'>热门活动<span class='s-en'>Activities</span></span>
+							</a>
+						</li>
+
+						<li><i></i>
+							<a href="brand.html"><span class="s-all">品牌<span class="s-en">Brand</span></span>
+							</a>
+						</li>
+						<li><i></i>
+							<a href="member.html"><span class="s-all">会员<span class="s-en">Member</span></span>
+							</a>
+							<i class="last"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<style>
+			.choice-a {
+				display: inline-block !important;
+			}
+			
+			.agent_tit .nav li a {
+				height: auto;
+			}
+		</style>
+		<div class="phome" style="background:url(http://cq.jfr121314.com/upload/photoerBanner/2016-07-21/thumb/cd291eb12d85a3e03fc09e90aacc6e0d_1920x260.jpg) no-repeat center top;">
+			<div class="w1200 phomecon">
+			</div>
+		</div>
+		<div class="w1200 avawrap clearfix">
+			<div class="avatar">
+				<img id="head" class="avaimg" >
+
+			</div>
+			<div class="avainfo">
+				<div class="pull-left">
+					<div class="avaname">摄影师 <em id="name"></em>
+						<span id="level"  style="background:url(http://cq.jfr121314.com/upload/icon/2016-11-02/thumb/4b665b080bb5bec5146aa92fde70a08f_27x27.png) no-repeat left center;">
+                               </span>
+						<img src="http://cq.jfr121314.com/static/images/site/1for1.png" alt="几对几" style="vertical-align: top;">
+					</div>
+					<div class="place"><span class="address">广州</span>常驻馆：<span class="often" id="spots"></span></div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="w1200 agent_wrap" style="padding: 0;">
+			<div class="agline"></div>
+			<div class="agent_tit clearfix">
+				<!-- Nav tabs -->
+				<ul class="nav agent_ul nav-tabs pull-left" role="tablist">
+					<li role="presentation" class="tab active">
+						<a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i></i>
+							<h4>大师主页</h4><span>Master page</span></a>
+					</li>
+
+					<li role="presentation" class="tab">
+						<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i></i>
+							<h4>Ta的档期</h4><span>Schedule</span></a>
+					</li>
+					 <li role="presentation" class="tab"><a href="#messages" id="comment" aria-controls="messages" role="tab" data-toggle="tab"><i></i><h4>新人评价</h4><span>Comment</span></a></li>
+					
+				</ul>
+				<div class="pull-right" style="margin-right: 20px;"><button class="help_button" href="#myOrder" data-toggle="modal">帮我约Ta</button></div>
+
+			</div>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="home">
+					<div class="clearfix work_wrap">
+							<a href="#myBlure" data-toggle="modal">
+								<h3>大师简介 <i></i></h3></a>
+							<div class="wlistcon mar-t20">
+								<p id="summary"></p>
+							</div>
+					</div>
+					<div class="w1200">
+						<div class="listtit clearfix">
+							<div class="pull-left">
+								<h3 style="margin: 20px 0 10px 0;">客照<span>精选</span></h3> <span class="grey">Guest photo</span></div>
+							<a class="pull-right" href="http://cq.jfr121314.com/share-index.html?photoer_id=525">more+</a>
+						</div>
+						<div class="choice_wrap grid clearfix" id="works">
+							
+						</div>
+					</div>
+					
+				</div>
+				<div role="tabpanel" class="tab-pane" id="profile">
+					<div class="w1200">
+						<div class="hottit clearfix">
+							<span id="album_order">
+                        <a class="cur" href="javascript:" data-order="default">所有</a>
+                        <a href="javascript:" data-order="date">时间</a>
+                        <a href="javascript:" data-order="hot">热度</a>
+                    </span>
+						</div>
+						<div class="enjoy clearfix" id="album_list">
+
+						</div>
+						<div class="pages_wrap text-center mt20" id="albumPage">
+
+						</div>
+					</div>
+					<div class="w1200 guest_wrap">
+						<div class="guest_tit clearfix">
+							<div class="pull-left"><span class="h4">我的客照</span><span class="promi">一心一意的爱情态度.一生一世的爱情长度</span></div>
+							<div class="pull-right">
+								<a href="http://cq.jfr121314.com/share-index.html?photoer_id=525">推荐客照+</a>
+							</div>
+						</div>
+						<div class="guest_con clearfix" id="shareList1">
+
+						</div>
+					</div>
+					<div class="add w1200">
+						<a href="">
+							<img src=""></a>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="messages">
+
+					<div class="w1200">
+
+						<div class="reviewrap" id="comment_list">
+
+						</div>
+						<div class="pages_wrap text-center mt20" id="commentPage">
+
+						</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="settings">
+					<div class="clearfix w1200">
+						<div class="pter-date pull-left clearfix" style="width:800px;">
+							<div class="container" id="calendar_contauner">
+								<div class="calendar-container">
+									<div class="calendar">
+										<header>
+											<h2 class="month" style="cursor: pointer;" title="返回当前月份">2016年3月</h2>
+											<a href="javascript:void(0);" class="btn-prev fontawesome-angle-left"></a>
+											<a href="javascript:void(0);" class="btn-next fontawesome-angle-right"></a>
+										</header>
+										<table>
+											<thead>
+												<tr>
+													<td>一</td>
+													<td>二</td>
+													<td>三</td>
+													<td>四</td>
+													<td>五</td>
+													<td>六</td>
+													<td>日</td>
+												</tr>
+											</thead>
+										</table>
+										<div class="dday-box my_dday_box">
+											<div data-day="0" data-month="0" class="" style="opacity: 0;">0</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">1</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">2</div>
+											<div data-day="0" data-month="0" class="can-see">3</div>
+											<div data-day="0" data-month="0" class="can-see current-day">4</div>
+											<div data-day="0" data-month="0" class="can-see yes-curr">5</div>
+											<div data-day="0" data-month="0" class="can-see no-curr">6</div>
+											<div data-day="0" data-month="0" class="can-see">7</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">8</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">9</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">10</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">11</div>
+											<div data-day="0" data-month="0" class="can-see">12</div>
+											<div data-day="0" data-month="0" class="can-see">13</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">14</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">15</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">16</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">17</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">18</div>
+											<div data-day="0" data-month="0" class="can-see">19</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">20</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">21</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">22</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">23</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">24</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">25</div>
+											<div data-day="0" data-month="0" class="can-see">26</div>
+											<div data-day="0" data-month="0" class="can-see no-curr">27</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">28</div>
+											<div data-day="0" data-month="0" class="can-see">29</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">30</div>
+											<div data-day="0" data-month="0" class="can-see" style="opacity: 0.5;">31</div>
+										</div>
+										<div class="list">
+											<div date-day="4" date-month="12" class="day-event"></div>
+											<div date-day="13" date-month="12" class="day-event"></div>
+											<div date-day="14" date-month="12" class="day-event"></div>
+											<div date-day="16" date-month="12" class="day-event"></div>
+											<div date-day="24" date-month="12" class="day-event"></div>
+											<div date-day="31" date-month="12" class="day-event"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 帮我约Ta 模态框（Modal） -->
+		<div class="modal fade" id="myOrder" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="">
+			<div class="modal-dialog modal-lg modal_wrap">
+				<div class="modal-content">
+					<div class="modal-header modal_tit">
+						<button type="button" class="close" data-dismiss="modal" id="close" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">预约摄影师</h4>
+					</div>
+					<div class="modal-body Order_con">
+						<form id="form-attempt" class="form-horizontal Order_form">
+							<div class="form-group Order_group">
+								<label for="" class="col-sm-2 control-label">大师</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="pname" readonly>
+									<input type="hidden"  id="pid">
+								</div>
+								<div class="col-sm-4 Order_info"><span><img src="statics/images/ts.png"></span> 您喜欢哪个大师</div>
+							</div>
+							<div class="form-group Order_group">
+								<label for="" class="col-sm-2 control-label"><span>*</span> 意向拍摄日期</label>
+								<div class="col-sm-6 clearfix">
+									<div class="pull-left" style="margin-left:15px;">
+										<div class="form-group" style="width:200px">
+											<div class='input-group date'>
+												<input type='text' class="form-control" id="start_date" name="attempt[start_date]" data-re="^\d{4}-\d\d-\d\d$" data-err="请选择开始日期">
+												<span class="input-group-addon" onclick="document.getElementById('start_date').focus();"><span class="glyphicon glyphicon-calendar"></span>
+												</span>
+											</div>
+										</div>
+									</div>
+									<span class="pull-left tline"> — </span>
+									<div class="pull-left">
+										<div class="form-group" style="width:200px">
+											<div class='input-group date'>
+												<input type='text' class="form-control" id="end_date" name="attempt[end_date]" data-re="^\d{4}-\d\d-\d\d$" data-err="请选择结束日期">
+												<span class="input-group-addon" onclick="document.getElementById('end_date').focus();"><span class="glyphicon glyphicon-calendar"></span>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 Order_info"><span><img src="statics/images/ts.png"></span> 您想要什么时候拍</div>
+							</div>
+							<div class="form-group Order_group">
+								<label for="" class="col-sm-2 control-label"><span>*</span> 真实姓名</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="attempt[realname]" placeholder="请输入您的姓名" data-re="^.+$" data-err="请填写您的姓名" value="" id="realname">
+								</div>
+								<div class="col-sm-4 Order_info"><span><img src="statics/images/ts.png"></span> 敢问高姓大名</div>
+							</div>
+							<div class="form-group Order_group">
+								<label for="" class="col-sm-2 control-label"><span>*</span> 性别</label>
+								<div class="col-sm-6 radio">
+									<label><input type="radio" name="sex" value="男" checked> 俊男</label> &nbsp;
+									<label><input type="radio" name="sex" value="女"> 美女</label>
+								</div>
+								<div class="col-sm-4 Order_info"></div>
+							</div>
+							<div class="form-group Order_group">
+								<label for="" class="col-sm-2 control-label"><span>*</span> 手机</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="attempt[telphone]" placeholder="请输入您的手机号码" data-re="^\d{11}$" data-err="请填写有效的手机号码" value="" id="tel">
+								</div>
+								<div class="col-sm-4 Order_info"><span><img src="statics/images/ts.png"></span> 您的手机号码</div>
+							</div>
+							<div class="form-group Order_group">
+								<label for="" class="col-sm-2 control-label">QQ</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="attempt[qq]" placeholder="请输入您的QQ" value="" id="qq">
+								</div>
+								<div class="col-sm-4 Order_info"><span><img src="statics/images/ts.png"></span> 您的QQ</div>
+							</div>
+							<div class="form-group Order_group">
+								<label for="" class="col-sm-2 control-label">备注信息</label>
+								<div class="col-sm-6">
+									<textarea class="form-control" rows="3" name="attempt[remark]" placeholder="备注信息" id="remarks"></textarea>
+								</div>
+								<div class="col-sm-4 Order_info"><span><img src="statics/images/ts.png"></span> 多留下些线索吧，确保新人助手能联系到您</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="button" id="send-attempt" class="btn btn-yello" style="width:400px;height:40px;font-size:16px;">确认提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+		</div>
+		<!-- /.modal -->
+
+
+		<script type="text/javascript">
+		var baseUrl = location.protocol  +"//"+location.host+"/Photo";
+		var LocString = String(window.document.location.href);  
+		function getQueryStr(str) { 
+		        var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString), tmp; 
+		        if (tmp = rs) { 
+		         return tmp[2]; 
+		        } 
+		        return ""; 
+		}  
+		var id = getQueryStr("id");
+
+			jQuery(".multipleLine").slide({
+				titCell: ".hd ul",
+				mainCell: ".bd .ulWrap",
+				autoPage: true,
+				effect: "top",
+				autoPlay: true
+			});
+			var photoer_uid = 525;
+			var USER_ID = photoer_uid; // 档期用
+
+			// $(function () {
+			//     $('#datetimepicker6').datetimepicker();
+			//     $('#datetimepicker7').datetimepicker();
+			//     $("#datetimepicker6").on("dp.change",function (e) {
+			//         $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+			//     });
+			//     $("#datetimepicker7").on("dp.change",function (e) {
+			//         $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+			//     });
+			// });
+
+			var start = {
+				elem: '#start_date',
+				event: 'focus',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(), //-1代表昨天，-2代表前天，以此类推
+				max: laydate.now(+90), //+1代表明天，+2代表后天，以此类推
+				istoday: false,
+				isclear: false,
+				choose: function(datas) {
+					end.min = datas; //开始日选好后，重置结束日的最小日期
+					end.start = datas; //将结束日的初始值设定为开始日
+				}
+			};
+			var end = {
+				elem: '#end_date',
+				event: 'focus',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(), //-1代表昨天，-2代表前天，以此类推
+				max: laydate.now(+90), //+1代表明天，+2代表后天，以此类推
+				istoday: false,
+				isclear: false
+			};
+			laydate(start);
+			laydate(end);
+
+			$('#start_date, #end_date').val(laydate.now()); // 默认当前日期
+
+			$('#send-attempt').on('click', function() {
+				var ret = true;
+				$('[data-re]').each(function(i, el) {
+					ret = new RegExp($(el).data('re')).test(el.value);
+					if(!ret) {
+						alert($(el).data('err'));
+						return false;
+					}
+				});
+
+				if(!ret) {
+					return false;
+				}
+
+				$('#close').click();
+				//var data = $('#form-attempt').serialize().replace(/\d{4}-\d+-\d+/g, '$&' + encodeURIComponent(' 00:00:00'));
+				$.post('/Photo/addSchedule', {photographerid:id,startdate:$('#start_date').val(),enddate:$('#end_date').val(),name:$('#realname').val(),sex:$('input[name="sex"]:checked').val(),tel:$('#tel').val(),qq:$('#qq').val(),remarks:$('#remarks').val()}, function(data) {
+
+					if(data.status == 0) {
+						alert("预约成功");
+						$('#myOrder').modal('hide');
+					}else{
+						alert("预约失败");
+					}
+
+					
+				}, 'json');
+
+				return false;
+			});
+
+		</script>
+
+		<script>
+		var user_status = 2;
+		$.get("/Photo/user/getUserInfo",{},function(data){
+			if(data.status==0){
+				user_status =1;
+			}
+		})
+			
+			$('.help_button').on('click', function() {
+				if(user_status == 2) {
+					show_login();
+					return false;
+				}
+			});
+			
+			
+			/**
+			 * Ta的档期
+			 */
+			var calendar = {
+				photoer_id: id,
+				data: [],
+				date: null,
+				selector: '#calendar_contauner',
+				num: 0,
+				start: 0,
+				m: 0,
+				y: 0,
+				day: 0, //星期几  0-6    一至七
+				//{data:[],date:''}
+				init: function() {
+					var that = this;
+					this.date = new Date();
+					this.addDay();
+					this.addEvent();
+					$(this.selector + ' .calendar>header>.btn-next').click(function() {
+						that.date = new Date(that.y, that.m + 1);
+						that.addDay();
+						that.addEvent();
+					});
+					$(this.selector + ' .calendar>header>.btn-prev').click(function() {
+						that.date = new Date(that.y, that.m - 1);
+						that.addDay();
+						that.addEvent();
+					});
+					$(this.selector + ' .calendar>header>h2').css({
+						cursor: 'pointer'
+					}).attr('title', '返回当前月份').click(function(e) {
+						e.stopPropagation();
+						that.date = new Date();
+						that.addDay();
+						that.addEvent();
+					});
+				},
+				addDay: function() {
+					this.m = this.date.getMonth();
+					this.y = this.date.getFullYear();
+					if(this.m > 10) {
+						var nextM = 0;
+						var nextY = this.y + 1;
+					} else {
+						nextY = this.y;
+						nextM = this.m + 1;
+					}
+
+					$(this.selector + ' .calendar>header>h2').html(this.y + '年' + (this.m + 1) + '月');
+					var next = new Date(nextY, nextM, 1);
+					var now = new Date(this.y, this.m, 1);
+					this.num = Math.ceil((next.getTime() - now.getTime()) / (1000 * 3600 * 24));
+					this.day = now.getDay(); //0-6 一 -日
+					this.start = this.day - 1 >= 0 ? this.day - 1 : 6;
+
+					$(this.selector + ' .calendar>.dday-box').empty();
+					var count = this.num + this.start;
+					for(var i = 0; i < count; i++) {
+						var realD = i - this.start;
+						var c = '';
+						var d = $('<div class="' + c + '" data-month="0" data-day="0">0</div>');
+						if(realD < 0) {
+							d.css({
+								filter: 'alpha(opacity=0)',
+								/*IE滤镜，透明度50%*/
+								opacity: 0 /*其他，透明度50%*/
+							});
+
+						} else {
+							d.addClass('can-see');
+							d.html(realD + 1);
+							d.data('day', realD + 1);
+							d.data('month', this.m);
+							d.data('year', this.y);
+							d.data('start', this.start);
+						}
+						$(this.selector + ' .calendar>.dday-box').append(d);
+					}
+				},
+				addEvent: function(mdata) {
+					var mdata = mdata || false;
+					if(!mdata) {
+						var data = {
+							'photoer_id': this.photoer_id,
+							'year': this.y,
+							'month': this.m + 1
+						};
+						var that = this;
+						$.ajax({
+							url: '/Photo/getScheduleByPhotographerId',
+							data: data,
+							dataType: 'json',
+							success: function(tdata) {
+								that.addEvent(tdata);
+							}
+						});
+					} else {
+						//添加事件
+						var schedule = mdata['schedule'];
+						var attempt = mdata['attempt'];
+						$(this.selector + ' .dday-box>div.can-see').each(function(i) {
+							var t = new Date($(this).data('year'), $(this).data('month'), $(this).data('day'), 8);
+							console.log(t);
+							// // console.log(t);
+							var flag = false;
+							for(var x in schedule) {
+								var start = new Date(schedule[x]['start']);
+								var end = new Date(schedule[x]['end']);
+								end.setDate(end.getDate() - 1);
+								if(start <= t && t <= end) {
+									$(this).addClass('no-curr');
+									flag = true;
+									break;
+								}
+							}
+							for(var y in attempt) {
+
+								var start1 = new Date(attempt[y]['start']);
+								var end1 = new Date(attempt[y]['end']);
+								//end1.setDate(end1.getDate() - 1);
+								if(start1 <= t && t <= end1) {
+									$(this).removeClass('no-curr');
+									$(this).addClass('current-day');
+									flag = true;
+									break;
+								}
+							}
+							var date = new Date();
+							if(!flag && date <= t && date.setDate(date.getDate() + 90) >= t) {
+								$(this).css({
+									cursor: 'pointer'
+								});
+								$(this).click(function() {
+									var m = $(this).data('month') < 9 ? '0' + ($(this).data('month') + 1) : $(this).data('month') + 1;
+									var the_date = $(this).data('year') + '-' + m + '-' + ($(this).data('day') < 10 ? '0' + $(this).data('day') : $(this).data('day'));
+									// show_attempt(photoer_id,the_date,the_date); // 意向单
+
+									$('#start_date, #end_date').val(the_date); // 默认当前日期
+									if(user_status == 2) {
+										show_login();
+										return false;
+									}
+									$('#myOrder').modal('show');
+								});
+							} else if(!flag) {
+								$(this).css({
+									filter: 'alpha(opacity=50)',
+									/*IE滤镜，透明度50%*/
+									opacity: 0.5 /*其他，透明度50%*/
+								});
+							}
+						});
+					}
+				}
+			};
+			calendar.init();
+		</script>
+
+		<div class="footer-wrap mar-t20">
+			<div class="copyright">
+				<a href="http://www.miibeian.gov.cn" style="color: #fff; text-decoration: underline;">粤ICP备10000001号</a> &nbsp;<a href="http://blog.gzvtc.cc" style="color: #fff; text-decoration: underline;">梦工程工作室出品 -gzgchzc</a></a><br /> @ 2017 GZVTC.CC &nbsp;
+			</div>
+		</div>
+<div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="">
+    <div class="modal-dialog modal_wrap">
+        <div class="modal-content">
+            <div class="modal-header login_tit clearfix">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title ltit pull-left" id="myModalLabel">会员登录</h3>
+                    <span class="pull-right lother">
+                        还没有帐号?                        <a href="javascript:" data-toggle="modal" id="registered" onclick="show_registered();">立即注册！</a>
+                    </span>
+            </div>
+            <div class="modal-body login_con">
+                <div class="way_tit clearfix">
+                    <span class="pull-left">账号登录</span>
+                    <a class="pull-right" href="javascript:" data-toggle="modal" onclick="show_forget();">忘记密码</a>
+                </div>
+                <div class="finput">
+                    <input type="text" id="LoginForm_phonenum" name="phonenum" class="form-control" placeholder="手机号码/用户名">
+                </div>
+                <div class="finput">
+                    <input type="password" id="LoginForm_password" name="password" class="form-control" placeholder="密码">
+                </div>
+                <input type="button" id="form_submit" value="立即登录" name="yt0" class="btn btn-yello01">
+            </div>
+        </div><!-- /.modal-content -->
+    </div>
+</div>
+<!-- 注册 模态框（Modal） -->
+<div class="modal fade" id="myreg" tabindex="-1" role="dialog" aria-labelledby="myregLabel" aria-hidden="true" style="">
+    <div class="modal-dialog modal_wrap">
+        <div class="modal-content">
+            <div class="modal-header login_tit clearfix">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title ltit pull-left" id="myregLabel">会员注册</h3>
+                <span class="pull-right lother">已有账号？<a id="login" onclick="show_login();">立即登录</a></span>
+            </div>
+            <div class="modal-body login_con">
+                <div class="way_tit clearfix">
+                    <span class="pull-left">注册账号</span>
+                    <a class="pull-right" onclick="show_protocol();">
+                        《梦工程工作室-gzgchzc注册服务协议》
+                    </a>
+                    <span class="pull-right">阅读并同意</span>
+                    <input type="checkbox" name="read" class="pull-right form-control" checked style="width: 10%;">
+                </div>
+                <div class="finput">
+                    <input type="text" maxlength="80" id="User_nickname" name="User[nickname]" class="form-control" placeholder="姓名">
+                </div>
+                <div class="finput">
+                    <input id="User_phonenum" class="form-control" type="text" maxlength="11" name="User[phonenum]" placeholder="请输入手机号">
+                </div>
+
+                <div class="finput">
+                    <input type="password" maxlength="100" id="User_passwd" name="User[passwd]" class="form-control" autocomplete="off" placeholder="请输入登录密码，密码长度为6-12位">
+                </div>
+                <div class="finput">
+                    <input type="password" id="User_repasswd" name="User[repasswd]" class="form-control" placeholder="请再次输入密码，密码长度为6-12位">
+                </div>
+                <button class="btn btn-yello01" onclick="register()" type="button">立即注册</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div>
+</div><!-- /.modal -->
+
+<!-- 忘记密码 模态框（Modal） -->
+<div class="modal fade" id="forget" tabindex="-1" role="dialog" aria-labelledby="myregLabel" aria-hidden="true" style="">
+    <div class="modal-dialog modal_wrap">
+        <div class="modal-content">
+            <div class="modal-header login_tit clearfix">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title ltit pull-left">忘记密码</h3>
+                <span class="pull-right lother">想起密码了？<a id="login" onclick="show_login();">立即登录</a></span>
+            </div>
+            <div class="modal-body login_con">
+                <div class="finput">
+                    <input id="forget_phonenum" class="form-control" type="text"  name="forget[name]" placeholder="用户名">
+                </div>
+ 				<div class="finput">
+                    <input id="forget_phonenum" class="form-control" type="text" maxlength="11" name="forget[phonenum]" placeholder="请输入手机号">
+                </div>
+
+                <div class="finput">
+                    <input type="password" maxlength="100" id="forget_passwd" name="forget[passwd]" class="form-control" autocomplete="off" placeholder="请输入新的密码">
+                </div>
+                <div class="finput">
+                    <input type="password" id="forget_repasswd" name="forget[repasswd]" class="form-control" placeholder="请再次输入密码">
+                </div>
+                <button class="btn btn-yello01" onclick="find()" type="button">找回</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div>
+</div><!-- /.modal -->
+<script type="text/javascript" src="statics/login.js" ></script>
+		<script>
+		 var global_userid = 0;
+    // Vertical centered modals
+    // you can give custom class like this // var modalVerticalCenterClass = ".modal.modal-vcenter";
+    //模态框垂直居中
+    var modalVerticalCenterClass = ".modal";
+    function centerModals($element) {
+        var $modals;
+        if ($element.length) {
+            $modals = $element;
+        } else {
+            $modals = $(modalVerticalCenterClass + ':visible');
+        }
+        $modals.each( function() {
+            var $clone = $(this).clone().css('display', 'block').appendTo('body');
+            var top = Math.round(($clone.height() - $clone.find('.modal-dialog').height()) / 2);
+            top = top > 0 ? top : 0;
+            $clone.remove();
+            $(this).find('.modal-dialog').css("margin-top", top);
+        });
+    }
+    $(modalVerticalCenterClass).on('show.bs.modal', function() {
+        centerModals($(this));
+    });
+    $(window).on('resize', centerModals);
+    function show_registered(){
+        $("#myLogin").modal( 'hide' );
+        $("#myreg").modal( 'show' );
+    }
+    function show_login(){
+        $("#myreg").modal( 'hide' );
+        $("#forget").modal( 'hide' );
+        $("#myLogin").modal( 'show' );
+    }
+    function show_forget(){
+        $("#forget").modal( 'show' );
+        $("#myLogin").modal( 'hide' );
+    }
+
+    $("#favorites").click(addFavorite);
+    function show_protocol() {
+        //自定页
+        layer.open({
+            type: 2,
+            title: '注册协议',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['900px', '600px'],
+            content: 'site-protocol.html' //iframe的url
+        });
+    }
+	
+			
+			
+			$.post("/Photo/getPhotographer", {id:id}, function(data) {
+			if(data.status == 0) {
+				$("#pid").val(id);
+				$("#name").html(data.data.name);
+				$("#pname").val(data.data.name);
+				$("#level").html(data.data.level);
+				$("#spots").html(data.data.spots);
+				$("#head").attr({src:baseUrl+data.data.head});
+				$("#summary").html(data.data.summary);
+			}
+		});
+		
+		
+		
+			$.get("/Photo/getWorksByPhotographerId", {id:id}, function(data) {
+			if(data.status == 0) {
+				$.each(data.data,function(i,item){
+					var result = '<div class="choice_list"><figure class="effect-zoe" style="height: 380px;"><a class="whole" href="weddings.html?id='+item.id+'" target="_blank"><img alt="img25" src="'+baseUrl+item.path+'"></a><figcaption class="choice"><div class="pull-left choicecon"><a href="works.html?id="'+item.id+'><p>'+item.title+'</p></a></div></figcaption></figure></div>';
+					$("#works").append(result);
+				})
+			}
+		});
+		 $.get('/Photo/getCommentByPid',{pid:id},function(data){
+			 if(data.status==0){
+				 $.each(data.data,function(i,item){
+					 var result = '<div class="review_list clearfix"><a class="pull-left repho" href="javascript:;"><img src="statics/images/default_avatar.jpg"></a><div class="review_con pull-left"><div><span style="font-weight: bold;">'+item.name+'顾客的评论</span><br><span class="rtime">'+item.createTime+'</span></div><div><p>'+item.comment+'</p></div></div></div>';
+					$('#comment_list').append(result);
+				  })
+			 }
+		 })
+		</script>
+
+</html>

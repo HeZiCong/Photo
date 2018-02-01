@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry
+		location="C:\Users\Administrator\Desktop\CF\CF\WebContent\WEB-INF\lib\mysql-connector-java-5.1.33.jar" />
+	<context id="context1">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		 <!-- 数据库链接URL、用户名、密码 -->  
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
+            connectionURL="jdbc:mysql://localhost:3306/photo" userId="root" password="root" />  
+        <!-- 生成模型的包名和位置 -->  
+        <javaModelGenerator targetPackage="cn.hzc.model" targetProject="Photo/src" />  
+        <!-- 生成的映射文件报名和位置 -->  
+        <sqlMapGenerator targetPackage="cn.hzc.mapping" targetProject="Photo/src" />  
+       <table tableName="%" /> 
+     
+       
+	</context>
+</generatorConfiguration>
