@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.gzvtc.mapping.TPhotographerMapper">
+  <resultMap id="BaseResultMap" type="cc.gzvtc.model.TPhotographer">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="head" jdbcType="VARCHAR" property="name" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="createTime" jdbcType="DATE" property="createtime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="summary" jdbcType="LONGVARCHAR" property="summary" />
+  </resultMap>
+  
+</mapper>

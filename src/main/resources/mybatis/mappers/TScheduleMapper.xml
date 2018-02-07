@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.gzvtc.mapping.TScheduleMapper">
+	<resultMap id="BaseResultMap" type="cc.gzvtc.model.TSchedule">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="userId" jdbcType="INTEGER" property="userid" />
+		<result column="photographerId" jdbcType="INTEGER" property="photographerid" />
+		<result column="start" jdbcType="DATE" property="start" />
+		<result column="end" jdbcType="DATE" property="end" />
+		<result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+		<result column="status" jdbcType="TINYINT" property="status" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="sex" jdbcType="VARCHAR" property="sex" />
+		<result column="tel" jdbcType="VARCHAR" property="tel" />
+		<result column="qq" jdbcType="VARCHAR" property="qq" />
+		<result column="remarks" jdbcType="VARCHAR" property="remarks" />
+	</resultMap>
+</mapper>

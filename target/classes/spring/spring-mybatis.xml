@@ -3,17 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
-http://www.springframework.org/schema/tx 
-http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-http://www.springframework.org/schema/aop 
-http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-http://www.springframework.org/schema/context
-http://www.springframework.org/schema/context/spring-context-4.0.xsd
-">
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		">
 
 	<!-- 引入属性文件 -->
-	<context:property-placeholder location="classpath:cc/gzvtc/config/dataSource.properties" />
+	<context:property-placeholder location="classpath:dataSource.properties" />
 
 	<!-- 配置数据源 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
@@ -38,10 +38,10 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描entity目录，省略Configuration.xml里手工配置 -->
-		<property name="configLocation" value="classpath:cc/gzvtc/config/mybatis-config.xml" />
+		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:cn/hzc/mapping/*.xml</value>
+				<value>classpath:mybatis/mappers/*.xml</value>
 			</list>
 		</property>
 		<property name="plugins">

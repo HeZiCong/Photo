@@ -14,15 +14,10 @@
 
 	<!-- 装载自定义的conversionService -->
 	<mvc:annotation-driven conversion-service="conversionService" />
-	<!-- <mvc:interceptors> <mvc:interceptor> 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller 
-		<mvc:mapping path="/**" /> <mvc:mapping path="/main.do" /> <bean class="cn.cf.common.interceptor.CommonInterceptor"></bean> 
-		</mvc:interceptor> 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 
-		</mvc:interceptors> -->
 	<bean id="conversionService"
 		class="org.springframework.context.support.ConversionServiceFactoryBean">
 		<property name="converters">
 			<list>
-				<!-- <bean class=""></bean> --><!-- 自定义的转换器 -->
 			</list>
 		</property>
 	</bean>
