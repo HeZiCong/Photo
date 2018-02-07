@@ -1,6 +1,10 @@
 # photo
 婚纱影楼摄影网站（The wedding photography website）
 
+*maven project*
+
+[分支1.0.0：带有jar包的javaweb project](https://github.com/HeZiCong/Photo/tree/1.0.0)
+
 **gzgchzc博客最新更新地址：[http://blog.gzvtc.cc/](http://blog.gzvtc.cc/)**
 
 这个项目是参照金夫人旧版的网站开发，实际业务根据客户提供的需求开发，使用java前后端分离而开发婚纱影楼摄影项目。
@@ -34,7 +38,7 @@
 
 1 - 创建数据库photo并导入跟目录sql/photo.sql文件到数据库
 
-2 - 更新 cc/gzvtc/config/dataSource.properties中数据库连接配置
+2 - 更新 dataSource.properties中数据库连接配置
 
 3 - 导入ide部署到tomcat上运行
 
