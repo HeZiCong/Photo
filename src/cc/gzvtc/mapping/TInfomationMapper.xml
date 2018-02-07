@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hzc.mapping.TInfomationMapper">
-	<resultMap id="BaseResultMap" type="cn.hzc.model.TInfomation">
+<mapper namespace="cc.gzvtc.mapping.TInfomationMapper">
+	<resultMap id="BaseResultMap" type="cc.gzvtc.model.TInfomation">
 		<id column="id" jdbcType="INTEGER" property="id" />
 		<result column="title" jdbcType="VARCHAR" property="title" />
 		<result column="path" jdbcType="VARCHAR" property="path" />
