@@ -1,6 +1,8 @@
 # photo
 婚纱影楼摄影网站（The wedding photography website）
 
+*普通的javaweb project 含有jar包*
+
 **gzgchzc博客最新更新地址：[http://blog.gzvtc.cc/](http://blog.gzvtc.cc/)**
 
 这个项目是参照金夫人旧版的网站开发，实际业务根据客户提供的需求开发，使用java前后端分离而开发婚纱影楼摄影项目。
