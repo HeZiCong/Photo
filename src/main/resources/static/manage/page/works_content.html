@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>作品详情</title>
+<meta name="description" content="作品详情" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<!-- bootstrap & fontawesome -->
+<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+<link rel="stylesheet" href="../assets/css/font-awesome.css" />
+<!-- page specific plugin styles -->
+<!-- text fonts -->
+<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+<!-- ace styles -->
+<link rel="stylesheet" href="../assets/css/ace.css"
+	class="ace-main-stylesheet" id="main-ace-style" />
+<!--[if lte IE 9]>
+			<link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+		<![endif]-->
+<style>
+.body {
+	font-family: "Microsoft YaHei", "宋体", "SimSun" !important;
+	font-size: 16px;
+	margin: 0, auto;
+	padding: 50px;
+}
+
+#summary {
+	font-size: 14px;
+}
+
+p {
+	text-indent: 2em; /*每个P段落，首行空出两个空格，即缩进两个字符*/
+}
+</style>
+</head>
+
+<body class="no-skin">
+	<div class="main-container" id="main-container">
+		<div class="main-content">
+			<div class="page-content text-center bg-info">
+
+
+
+				<div id="docs" class="row"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /.main-content -->
+
+	<script type="text/javascript">
+		if ('ontouchstart' in document.documentElement)
+			document.write("<script src='../assets/js/jquery.mobile.custom.js'>"
+					+ "<"+"/script>");
+	</script>
+	<script type="text/javascript" src="../assets/js/jquery1x.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../assets/js/ace-elements.js"></script>
+	<script type="text/javascript" src="../assets/js/ace.js"></script>
+	<script type="text/javascript">
+	var baseUrl = location.protocol  +"//"+location.host+"/";
+		$(document).ready(
+				function() {
+					var LocString = String(window.document.location.href);
+					function getQueryStr(str) {
+						var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)",
+								"gi").exec(LocString), tmp;
+						if (tmp = rs) {
+							return tmp[2];
+						}
+						return "";
+					}
+					var id = getQueryStr("id");
+					$.ajax({
+						type : "POST",
+						data : {
+							id : id
+						},
+						url : "/getWorksImgById",
+						async : false,
+						success : function(response) {
+							 if(response.status==0){
+								 $.each(response.data, function(i, item) {
+								
+									 $("#docs").append("<img src='"+baseUrl+item.path+"' alt='照片不能显示' width='100%' /><br/>");
+								 });
+							 }
+						}
+					});
+				});
+	</script>
+</body>
+</html>

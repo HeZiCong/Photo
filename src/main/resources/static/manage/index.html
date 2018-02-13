@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>梦工程婚纱摄影网站管理后台</title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" href="css/fakeLoader.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.js"></script>
+		<![endif]-->
+		<style>
+			.main-content.content_margin {
+				margin-left: 0;
+			}
+		</style>
+	</head>
+
+	<body class="no-skin">
+		<div class="fakeloader"></div>
+		<!-- #section:basics/navbar.layout -->
+		<!--头部容器-->
+		<div class="navbar" id="navbar navbar-default">
+			<script type="text/javascript">
+				try {
+					ace.settings.check('navbar', 'fixed')
+				} catch(e) {}
+			</script>
+
+			<!-- navbar goes here -->
+			<!-- #section:basics/sidebar.mobile.toggle 自适应出现点击弹出左边菜单的按钮-->
+			<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+			<div id="navbar-container" class="navbar-container">
+				<!-- 头部左边-->
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>
+					      <i class="ace-icon fa fa-leaf"></i>
+					 		 梦工程婚纱摄影网站管理后台
+					    </small>
+					</a>
+				</div>
+				<!--头部右边-->
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+
+						
+
+							<!-- #section:basics/navbar.user_menu -->
+							<li class="light-blue">
+								<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+									<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+									<span class="user-info">
+									<small>欢迎,</small>
+									<label id="userName"></label>
+								</span>
+
+									<i class="ace-icon fa fa-caret-down"></i>
+								</a>
+
+								<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+
+									<li id="logout">
+										<a>
+											<i class="ace-icon fa fa-power-off"></i> 注销
+										</a>
+									</li>
+								</ul>
+							</li>
+
+							<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+				<!-- /section:basics/navbar.dropdown -->
+			</div>
+			<!-- /.navbar-containerpage-content -->
+		</div>
+		<!--中部容器-->
+		<div class="main-container" id="main-container">
+			<div class="sidebar responsive" id="sidebar">
+				<!-- sidebar goes here -->
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<!--正常情况显示四个带有图标的按钮-->
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success"><i class="ace-icon fa fa-signal"></i></button>
+						<button class="btn btn-info"><i class="ace-icon fa fa-pencil"></i></button>
+						<button class="btn btn-warning"><i class="ace-icon fa fa-users"></i></button>
+						<button class="btn btn-danger"><i class="ace-icon fa fa-cogs"></i></button>
+					</div>
+					<!--收缩菜单最小化的按钮-->
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+						<span class="btn btn-info"></span>
+						<span class="btn btn-warning"></span>
+						<span class="btn btn-danger"></span>
+					</div>
+				</div>
+
+				<ul class="nav nav-list" id="menu">
+					<li id="50">
+						<a href="#" class="dropdown-toggle"><i class="menu-icon fa  fa-users" icon=" fa-folder"></i><span class="menu-text">用户订单管理</span> <b class="arrow fa fa-angle-down"></b> </a> <b class="arrow"></b>
+						<ul class="submenu nav-show" style="display: none;">
+							<!-- <li id="51">
+								<a href="page/user_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">用户管理</span> <b class="arrow"></b> </a>
+							</li> -->
+							<li id="52">
+								<a href="page/order_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">订单管理</span> <b class="arrow"></b> </a>
+							</li>
+						</ul>
+					</li>
+					<li id="55">
+						<a href="#" class="dropdown-toggle"><i class="menu-icon fa   fa-camera" icon=" fa-folder"></i><span class="menu-text">摄影管理</span> <b class="arrow fa fa-angle-down"></b> </a> <b class="arrow"></b>
+						<ul class="submenu nav-show" style="display: none;">
+							<li id="56">
+								<a href="page/photographer_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">摄影师管理</span> <b class="arrow"></b> </a>
+							</li>
+							<li id="57">
+								<a href="page/level_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">级别管理</span> <b class="arrow"></b> </a>
+							</li>
+							<li id="63">
+								<a href="page/label_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">标签管理</span> <b class="arrow"></b> </a>
+							</li>
+							<li id="58">
+								<a href="page/spots_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">拍摄景点管理</span> <b class="arrow"></b> </a>
+							</li>
+							<li id="59">
+								<a href="page/works_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">客片管理</span> <b class="arrow"></b> </a>
+							</li>
+							
+						</ul>
+					</li>
+					<li id="60">
+						<a href="#" class="dropdown-toggle"><i class="menu-icon fa   fa-desktop" icon=" fa-folder"></i><span class="menu-text">网站管理</span> <b class="arrow fa fa-angle-down"></b> </a> <b class="arrow"></b>
+						<ul class="submenu nav-show" style="display: none;">
+							<li id="61">
+								<a href="page/banner_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">轮播图管理</span> <b class="arrow"></b> </a>
+							</li>
+							<li id="62">
+								<a href="page/info_list.html"><i class="menu-icon fa fa-sliders" icon="fa-sliders"></i><span class="menu-text">资讯管理</span> <b class="arrow"></b> </a>
+							</li>
+						
+							
+						</ul>
+					</li>
+				</ul>
+
+				<div class="sidebar-toggle sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+
+			<div class="main-content">
+
+				<div class="page-content">
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- page content goes here -->
+							<ul class="nav nav-tabs" id="pageTab" style="z-index:0;">
+								<!-- 	<li class="active">
+                                <a data-toggle="tab" href="#home">
+                                    <i class="green ace-icon fa fa-home bigger-120"></i>
+                                        首页
+                                    </a>
+                            </li> -->
+							</ul>
+							<div class="tab-content" id="pageTabContent" style="z-index:0;">
+								<!-- 	<div id="home" class="tab-pane fade in active">
+                                        <iframe name="mainFrame" id="mainFrame" frameborder="0" src="student/change_profession_list.html" style="margin:0 auto;width:100%;height:500px;" scrolling="yes"></iframe>
+                            </div> -->
+                            
+							</div>
+
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content -->
+
+			</div>
+			<!-- /.main-content -->
+
+		</div>
+		<!-- /.main-container -->
+		<!-- list of script files -->
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery.js'>" + "<" + "/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+		<script type="text/javascript">
+		 window.jQuery || document.write("<script src='assets/js/jquery1x.js'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.js'>" + "<" + "/script>");
+		</script>
+		<script type="text/javascript" src="assets/js/angular.min.js" ></script>
+		<script src="assets/js/jquery1x.js"></script>
+		<script src="assets/js/bootstrap.js"></script>
+		<script src="assets/js/ace-elements.js"></script>
+		<script src="assets/js/ace.js"></script>
+		<script type="text/javascript" src="assets/js/zDrag.js"></script>
+		<script type="text/javascript" src="assets/js/zDialog.js"></script>
+		<script type="text/javascript" src="assets/js/iframeResizer.min.js"></script>
+		<script type="text/javascript" src="assets/js/fakeLoader.min.js"></script>
+		<script type="text/javascript" src="assets/js/processbar/processbar.js"></script>
+		<script type="text/javascript">
+			$(".fakeloader").fakeLoader({
+				timeToHide: 600,
+				bgColor: "#3498db",
+				spinner: "spinner2"
+			});
+			function showProBar() {
+        $('#zzbc').showProcessBar();
+    }
+
+    function hideProBar() {
+        $('#zzbc').hideProcessBar();
+    }
+
+		</script>
+		<script type="text/javascript" src="js/left.js" ></script>
+	</body>
+
+</html>

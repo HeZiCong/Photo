@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<title>梦工程工作室-gzgchzc-让爱无处不在</title>
+		<meta name="author" content="design by www.gzvtc.cc" />
+		<meta name="viewport" content="width=1200, user-scalable=no, target-densitydpi=device-dpi" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+
+		<link href="statics/css/common.css" rel="stylesheet" type="text/css" />
+		<link href="statics/css/index.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="statics/js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="statics/js/jquery.flash.js"></script>
+		<link rel="stylesheet" href="statics/bootstrap.min.css">
+		<link rel="stylesheet" href="statics/style.css">
+		<link rel="stylesheet" href="statics/common.css">
+		<link rel="stylesheet" href="statics/share.min.css">
+		<script src="statics/jquery.min.js"></script>
+		<script src="statics/jquery.share.min.js"></script>
+		<script src="statics/bootstrap.min.js"></script>
+		<!--<link href="statics/index3.css" />-->
+		<!--[if lt IE 7]>
+		<script type="text/javascript" src="statics/js/pngfix.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="C-head">
+			<div class="w1200 clearfix">
+				<a class="logo" href=""></a>
+				<div class="nav">
+					<ul>
+						<li>
+							<i></i>
+							<a href="index.html">
+
+								<span class="s-all">首页<span class="s-en">Home</span></span>
+							</a>
+						</li>
+
+						<li class='tip'>
+							<i></i>
+							<a href='wedding.html'>
+
+								<span class='s-all'>客片欣赏<span class='s-en'>Wedding</span></span>
+							</a>
+						</li>
+
+						<li>
+							<i></i>
+							<a href='photoer.html'>
+
+								<span class='s-all'>选摄影师<span class='s-en'>Photographer</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='spots.html'>
+
+								<span class='s-all'>拍摄景点<span class='s-en'>Spots</span></span>
+							</a>
+						</li>
+						<li>
+							<i></i>
+							<a href='information.html'>
+
+								<span class='s-all'>热门活动<span class='s-en'>Activities</span></span>
+							</a>
+						</li>
+
+						<li><i></i>
+							<a href="brand.html"><span class="s-all">品牌<span class="s-en">Brand</span></span>
+							</a>
+						</li>
+						<li><i></i>
+							<a href="member.html"><span class="s-all">会员<span class="s-en">Member</span></span>
+							</a>
+							<i class="last"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="gutwrap s-top-bg">
+			<div class="w1200 clearfix wrap">
+				<div class="pull-left gkind s-cate-fl">
+					<a class="curr order_by cbtn" href="javascript:choose()" data-order="default">所有分类</a>
+					<a class="curr order_by" href="javascript:choose('DESC')" data-order="date">最新</a>
+					<a id="cbtn" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">场景</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="scene_hover" id="collapse" style="padding: 20px 0px 10px; display: none;">
+			<div class="w1200 hgwrap hide_box" id="spots">
+
+			</div>
+		</div>
+		<div class="w1200 clearfix">
+			<ul class="C-photos-list" id="works">
+
+			</ul>
+		</div>
+		<div class="footer-wrap mar-t20">
+			<div class="copyright">
+				<a href="http://www.miibeian.gov.cn" style="color: #fff; text-decoration: underline;">粤ICP备10000001号</a> &nbsp;<a href="http://blog.gzvtc.cc" style="color: #fff; text-decoration: underline;">梦工程工作室出品 -gzgchzc</a></a><br /> @ 2017 GZVTC.CC &nbsp;
+			</div>
+		</div>
+		<script>
+			var baseUrl = location.protocol + "//" + location.host + "/";
+			var sord, spotsId;
+
+			function choose(sort) {
+				sord = sort;
+				getData();
+			}
+
+			function chooseSpotsId(id) {
+				spotsId = id;
+				getData();
+			}
+			$('.curr').click(function() {
+				$('.curr').removeClass('cbtn');
+				$(this).addClass('cbtn');
+			});
+			$('.product').click(function() {
+				$('.product').removeClass('cur');
+				$(this).addClass('cur');
+			});
+			$("#cbtn").click(function() {
+				if($("#collapse").is(":hidden")) {
+					$("#collapse").show(1000);
+					$(this).addClass('cbtn');
+				} else {
+					$("#collapse").hide(1000);
+					$(this).removeClass('cbtn');
+					spotsId = "";
+					getData();
+				}
+
+			});
+			$.post("/getAllSpots", function(data) {
+				if(data.status == 0) {
+
+					var result = "<a class='product cur' href='javascript:chooseSpotsId()'>全部</a>";
+					$.each(data.data, function(i, item) {
+						result += "<a class='product' href='javascript:chooseSpotsId(" + item.id + ");'>" + item.name + "</a>"
+					});
+					$("#spots").html(result);
+				}
+			});
+			getData();
+
+			function getData() {
+				$.post("/getWorksListByPageStatus", {
+					sord: sord,
+					spotsId: spotsId
+				}, function(data) {
+					if(data.status == 0) {
+						var result = "";
+						$.each(data.data, function(i, item) {
+							result += "<li><a href='weddings.html?id=" + item.id + "' target='_blank'> <img src='" + baseUrl + item.path + "' /><div class='info-box'><div class='photos-txt clearfix'><h4>" + item.title + "</h4> </div><div class='photos-pt clearfix'> <i></i> <span>POST TIME: " + new Date(item.createTime).format("yyyy-MM-dd") + "</span> </div></div><div class='photos-shade'> <span></span><h4>" + item.title + "</h4></div></a></li>";
+						});
+
+						$("#works").html(result);
+					}
+					$(".C-photos-list a").hover(function() {
+						$(this).find(".photos-shade").show();
+					}, function() {
+						$(this).find(".photos-shade").hide();
+					});
+				});
+			}
+		</script>
+	</body>
+
+</html>

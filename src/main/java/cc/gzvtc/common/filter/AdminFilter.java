@@ -29,12 +29,11 @@ public class AdminFilter implements Filter {
 		if(session.getAttribute("admin")!=null){
 			arg2.doFilter(arg0, arg1);
 		}else{
-			response.sendRedirect("/Photo/manage/login.html");
+			response.sendRedirect("/manage/login.html");
 		}
 	}
 
 	public void init(FilterConfig arg0) throws ServletException {
-		
 	}
 
 }

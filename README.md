@@ -1,9 +1,11 @@
 # photo
 婚纱影楼摄影网站（The wedding photography website）
 
-*maven project*
+***v3:springboot project***
 
-[分支1.0.0：带有jar包的javaweb project](https://github.com/HeZiCong/Photo/tree/1.0.0)
+[1.0.0：带有jar包的javaweb project](https://github.com/HeZiCong/Photo/tree/release-1.0)
+
+[2.0.0：maven project](https://github.com/HeZiCong/Photo/tree/release-2.0)
 
 **gzgchzc博客最新更新地址：[http://blog.gzvtc.cc/](http://blog.gzvtc.cc/)**
 
@@ -24,7 +26,7 @@
 
 # 主要技术
 
-- Spring && SpringMvc
+- SpringBoot
 - Mybatis
 - bootstrap
 - AceAdmin
@@ -38,17 +40,17 @@
 
 1 - 创建数据库photo并导入跟目录sql/photo.sql文件到数据库
 
-2 - 更新 dataSource.properties中数据库连接配置
+2 - 更新 application.yml中数据库连接配置
 
-3 - 导入ide部署到tomcat上运行
+3 - 可以通过maven打包或者ide运行
 
-4 - http://localhost:8080/Photo 访问主页
+4 - http://localhost:8080 访问主页
 
 
 
 ## 后台模块
 
-登陆路径 localhost:8080/Photo/manage/
+登陆路径 localhost:8080/manage/login.html
 
 默认账号 admin<br>
 默认密码 admin

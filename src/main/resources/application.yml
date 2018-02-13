@@ -1,0 +1,65 @@
+server:
+  port: 8080
+spring: 
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/photo?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: 
+    password: 
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    cache: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+  mvc:
+    view:
+      suffix: .html
+  
+#连接池的配置信息
+## 初始化大小，最小，最大
+  druid:
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+## 配置获取连接等待超时的时间
+    maxWait: 60000
+# 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+# 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+
+
+mybatis:
+    config-location: classpath:mybatis/mybatis-config.xml
+    type-aliases-package: cc.gzvtc.model
+    mapper-locations: classpath:mybatis/mappers/*.xml
+
+mapper:
+    mappers:
+        - cc.gzvtc.common.dao.BaseMapper
+    not-empty: false
+    identity: MYSQL
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate: INFO
+ 
+    

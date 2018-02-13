@@ -143,7 +143,6 @@ public class BaseService<T> implements IService<T> {
 
 	@Override
 	public List<T> selectPageBySQL1(String sql, Class<T> entityClass, int pageNo, int pageSize) {
-		// TODO Auto-generated method stub
 		return sqlMapper.selectList(sql + " LIMIT "+ pageNo*pageSize+","+ pageSize,entityClass);
 	}
 	

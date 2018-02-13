@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>拍摄景点管理</title>
+<meta name="description" content="拍摄景点管理" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<!-- bootstrap & fontawesome -->
+<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+<link rel="stylesheet" href="../assets/css/font-awesome.css" />
+<!-- page specific plugin styles -->
+<link rel="stylesheet" href="../assets/css/jquery-ui.css" />
+<link rel="stylesheet" href="../assets/css/jquery-ui.custom.css" />
+<link rel="stylesheet" href="../assets/css/ui.jqgrid.css" />
+<link rel="stylesheet" href="../assets/css/chosen.css" />
+<link rel="stylesheet" href="../assets/css/daterangepicker.css " />
+<!-- text fonts -->
+<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+<!-- ace styles -->
+<link rel="stylesheet" href="../assets/css/ace.css"
+	class="ace-main-stylesheet" id="main-ace-style" />
+<!--[if lte IE 9]>
+			<link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+		<![endif]-->
+    <!--<link rel="stylesheet" href="../assets/css/page_list.css"/>-->
+    <style>
+    	form.form-horizontal > div {
+    margin-bottom: 15px;
+    height: 34px;
+}
+    </style>
+</head>
+
+<body class="no-skin">
+	<div class="main-container" id="main-container">
+		<div class="main-content">
+			<div class="page-content">
+				
+				<div class="form-actions center">
+                <a id="addButton" role="button"
+                   class="btn btn-info"> <i
+                        class="ace-icon fa  fa-plus-circle"></i>新增
+                </a>
+            </div>
+ 			<div class="space-6"></div>
+				<div>
+                    <div class="table-header">
+                        查询结果
+                    </div>
+					<table id="grid-table"></table>
+					<div id="grid-pager"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.main-content -->
+
+	<script type="text/javascript">
+		if ('ontouchstart' in document.documentElement)
+			document.write("<script src='../assets/js/jquery.mobile.custom.js'>"
+					+ "<"+"/script>");
+	</script>
+	<script type="text/javascript" src="../assets/js/jquery1x.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../assets/js/ace-elements.js"></script>
+	<script type="text/javascript" src="../assets/js/ace.js"></script>
+	<script src="../assets/js/bootbox.js"></script>
+	<script src="../js/require.js" data-main="../js/spots_list"></script>
+	<script type="text/javascript" src="../assets/js/zDrag.js"></script>
+	<script type="text/javascript" src="../assets/js/zDialog.js"></script>
+	<script type="text/javascript" src="../assets/js/iframeResizer.contentWindow.min.js" ></script>
+	<script type="text/javascript">
+	var baseUrl = location.protocol  +"//"+location.host+"/";
+	var LocString = String(window.document.location.href);  
+	
+	//修改操作
+	function editRow(id)  {
+		var diag = new top.Dialog();
+		diag.Drag=true;
+		diag.Title ="拍摄景点修改";
+		diag.URL = baseUrl+'/manage/page/spots_edit.html?id='+id;
+		diag.Width = 900;
+		diag.Height = 550;
+		diag.CancelEvent = function(){ //关闭事件，关闭时，可以刷新表单
+			 $("#grid-table").trigger("reloadGrid"); 
+			 diag.close();
+		}
+		diag.show();
+	}
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -285,18 +285,4 @@ public class DateFormater {
 		return dvalue;
 	}
 
-	public static void main(String args[]) {
-		try {
-			Date beforeDate = DateFormater.stringToDate("2008-12-10");
-			Date endDate = DateFormater.stringToDate("2010-12-13");
-			int days = DateFormater.dValueDate(beforeDate, endDate);
-			System.out.print(days);
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 }
