@@ -295,7 +295,6 @@ CREATE TABLE `t_schedule` (
 -- ----------------------------
 -- Records of t_schedule
 -- ----------------------------
-INSERT INTO `t_schedule` VALUES ('20', '5', '10', '2017-03-10', '2017-03-10', '2017-03-03', '1', '测试', '男', '13539767578', '', '');
 INSERT INTO `t_schedule` VALUES ('21', '5', '12', '2017-03-03', '2017-03-03', '2017-03-03', null, '测试2', '男', '13111111111', '', '');
 INSERT INTO `t_schedule` VALUES ('22', '1', '10', '2017-03-11', '2017-03-13', '2017-03-03', '1', null, null, null, null, null);
 INSERT INTO `t_schedule` VALUES ('23', '1', '11', '2017-03-09', '2017-03-13', '2017-03-03', '1', null, null, null, null, null);
@@ -357,7 +356,6 @@ INSERT INTO `t_user` VALUES ('5', '测试', 'e10adc3949ba59abbe56e057f20f883e', 
 INSERT INTO `t_user` VALUES ('6', 'zzzdk', '75e266f182b4fa3625d4a4f4f779af54', '13936251458', null, '2017-06-07');
 INSERT INTO `t_user` VALUES ('7', 'yzddd', '75e266f182b4fa3625d4a4f4f779af54', '15013268027', null, '2017-06-08');
 INSERT INTO `t_user` VALUES ('8', 'dddd', '75e266f182b4fa3625d4a4f4f779af54', '15013268027', null, '2017-06-08');
-INSERT INTO `t_user` VALUES ('9', '11', 'c4ca4238a0b923820dcc509a6f75849b', '13539767578', null, '2017-06-27');
 
 -- ----------------------------
 -- Table structure for `t_works`
