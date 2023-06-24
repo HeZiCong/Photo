@@ -1,4 +1,5 @@
-# photo
+# wedding station
+
 婚纱影楼摄影网站（The wedding photography website）
 
 ***v3:springboot project***
